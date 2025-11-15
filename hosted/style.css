@@ -47,10 +47,56 @@ nav:nth-child(1) {
     background-color: #66bdff;
 }
 
+.aboutLinkButton {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 10px 20px;
+    background-color:#338acc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.aboutLinkButton:hover {
+    background-color: #338acc;
+}
+
+#about-content {
+    max-width: 700px;
+    margin: 40px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0.1);
+}
+
+#about-content h1 {
+    color: #34495e;
+    font-size: 2em;
+    text-align: center;
+    border-bottom: 3px solid #3498db;
+    margin-bottom: 20px;
+}
+
+#about-content p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#domoPicture {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .domoForm {
+    display: flex;
+    align-items: center;
     border: 2px solid #338acc;
     height: 35px;
-    width: 700px;
+    width: 1000px;
     margin-top:0px;
     padding-top:10px;
     background-color: #55acee;
@@ -59,11 +105,10 @@ nav:nth-child(1) {
 }
 
 .domoForm label {
-    display: inline-block;
     width: 75px;
     margin-left: 10px;
+    text-align: right;
     font-size: 1.2em;
-    float: left;
     color: white;
 }
 

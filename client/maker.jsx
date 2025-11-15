@@ -9,13 +9,16 @@ const handleDomo = (e, onDomoAdded) => {
 
     const name = e.target.querySelector('#domoName').value;
     const age = e.target.querySelector('#domoAge').value;
+    {/*added in the new attribute*/}
+    const favoritePower = e.target.querySelector('#domoFavoritePower').value;
 
-    if(!name || !age) {
+    if(!name || !age || !favoritePower) {
         helper.handleError('All fields are required');
         return false;
     }
 
-    helper.sendPost(e.target.action, {name, age}, onDomoAdded);
+    {/*added in the new attribute*/}
+    helper.sendPost(e.target.action, {name, age, favoritePower}, onDomoAdded);
     return false;
 }
 
@@ -32,6 +35,9 @@ const DomoForm = (props) => {
             <input id="domoName" type="text" name="name" placeholder="Domo Name" />
             <label htmlFor="age">Age: </label>
             <input id="domoAge" type="number" min="0" name="age" />
+            {/*added in the form input for the new attribute*/}
+            <label htmlFor="favoritePower">Favorite Power: </label>
+            <input id="domoFavoritePower" type="text" name="favoritePower" placeholder="Favorite Power" />
             <input className="makeDomoSubmit" type="submit" value="Make Domo" />
         </form>
     );
@@ -63,6 +69,8 @@ const DomoList = (props) => {
                 <img src="/assets/img/domoface.jpeg" alt="domo face" className="domoFace" />
                 <h3 className="domoName">Name: {domo.name}</h3>
                 <h3 className="domoAge">Age: {domo.age}</h3>
+                {/*Display new attribute*/}
+                <h3 className="domoFavoritePower">Favorite Power: {domo.favorite_power}</h3>
             </div>
         );
     });
@@ -85,6 +93,8 @@ const App = () => {
             <div id="domos">
                 <DomoList domos={[]} reloadDomos={reloadDomos} />
             </div>
+            {/* added in about feature page*/}
+            <a href="/about" className="aboutLinkButton">About Domo</a>
         </div>
     );
 };

@@ -15,6 +15,12 @@ const DomoSchema = new mongoose.Schema({
     min: 0,
     required: true,
   },
+  // added new attribute
+  favorite_power: {
+    type: String,
+    required: true,
+    trim: true,
+  },
   owner: {
     type: mongoose.Schema.ObjectId,
     required: true,
